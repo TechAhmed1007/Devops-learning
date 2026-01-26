@@ -23,10 +23,46 @@ This project demonstrates practical networking and cloud concepts, including:
 ## Steps
 
 1. Purchased a custom domain using Route 53  
+
+- On AWS, navigate to Route 53 and enter a domain name:
+
+
+
+
 2. Launched an EC2 instance running Amazon Linux  
-3. Installed and configured NGINX  
-4. Opened HTTP (port 80) access via security groups  
-5. Created Route 53 A records pointing the domain to the EC2 instance  
+
+- In AWS console: Search EC2 > Instances > Launch Instances
+- I chose AMI: Amazon Linux 2
+- Instance Type: t3.micro
+- Enable auto Public ip
+- Security Group: Allow HTTP (Port 80) and SSH (Port 22, Your IP address)
+- Download key pair
+
+3. Assign an Elastic IP: 
+
+- Navigate to EC2- Network and security
+- Elastic IP's
+- Allocate Elastic IP address
+- Link that Elastic IP to your instance
+
+
+4. Installed and configured NGINX   
+
+NGINX was installed on the Amazon Linux EC2 instance using the following commands:
+
+```bash
+ssh -i "my-key.pem" ec2-user@<elastic-ip>
+sudo yum install -y nginx
+sudo systemctl start nginx
+sudo systemctl enable nginx
+```
+
+5. Created Route 53 A records pointing the domain to the EC2 instance
+
+- Route 53- Hosted Zones
+- Create A record and link it to your Elastic IP address
+
+  
 6. Verified the website was accessible via the custom domain
 7. Customised NGINX landing page  
 
