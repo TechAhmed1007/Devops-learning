@@ -24,9 +24,9 @@ This project demonstrates practical networking and cloud concepts, including:
 
 1. Purchased a custom domain using Route 53  
 
-- On AWS, navigate to Route 53 and enter a domain name:
+- On AWS, navigate to Route 53 and register a domain name:
 
-
+![Route 53 Domain](Screenshots/route53-domain.png)
 
 
 2. Launched an EC2 instance running Amazon Linux  
@@ -45,6 +45,8 @@ This project demonstrates practical networking and cloud concepts, including:
 - Allocate Elastic IP address
 - Link that Elastic IP to your instance
 
+  ![Elastic IP](Screenshots/elastic-ip.png)
+
 
 4. Installed and configured NGINX   
 
@@ -62,9 +64,16 @@ sudo systemctl enable nginx
 - Route 53- Hosted Zones
 - Create A record and link it to your Elastic IP address
 
+  ![A Record Confirmed](Screenshots/route53-a-record.png)
+
   
-6. Verified the website was accessible via the custom domain
+6. Verified the website was accessible via the NGINX landing page
+
+![Nginx Landing Page](Screenshots/nginx-default-page.png)
+
 7. Customised NGINX landing page  
+
+![Custom Landing Page](Screenshots/custom-landing-page.png)
 
 
 ## Result
